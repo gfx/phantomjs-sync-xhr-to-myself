@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>foo</title>
+    <script>
+      window.addEventListener("load", function(e) {
+        console.log("application start");
+
+        console.log("xhr start");
+        var xhr = new XMLHttpRequest;
+        xhr.onreadystatechange = function (e) {
+          console.log("xhr readystatechange:" + xhr.readyState);
+        };
+        xhr.open("GET", "bar.json", false /* sync */);
+        xhr.send();
+        console.log(xhr.responseText);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+  </body>
+</html>
+
